@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>メモアプリ（ソート）</title>
+  </head>
+  <body>
+    <h2>メモアプリ（ソート）</h2>
+    <!--[*_ ★ ソート]
+    「並び替える」ボタンを押したら、memosをソートした上で、ブラウザ(DOM)に反映される様にしましょう。
+    [Arrayのプロトタイプメソッド
+    https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array#instance_methods]からソートをするのに使えそうな関数を探してみると良いでしょう-->
+    <input type="text" id="memo-input" />
+    <button id="add-button">追加</button>
+    <button id="sort-button">並び替える</button>
+    <div id="memo-container"></div>
+    <script>
+      const memoInput = document.getElementById("memo-input")
+      const addButton = document.getElementById("add-button")
+      const sortButton = document.getElementById("sort-button")
+      const memoContainer = document.getElementById("memo-container")
+
+      //配列を宣言する
+      let memos = []
+
+      addButton.onclick = function () {
+        //配列の値を<div id="memo-container"></div>に追加するまえに、<div id="memo-container"></div>の持つタグを消して、memosの値と表示を一致させてください。
+        memoContainer.textContent = "" //入れ替えている，前のを消して，今のを表示させる
+
+        memos.push(memoInput.value)
+        console.log(memos)
+
+        // 追加ボタンを押したら、変更されたmemosの値をブラウザに表示されている<div id="memo-container"></div>に反映させてください。 ]
+        for (let i = 0; i < memos.length; i++) {
+          const div = document.createElement("div")
+          div.textContent = memos[i]
+          memoContainer.append(div)
+        }
+      }
+
+      //sortボタン
+      sortButton.onclick = function () {
+        memoContainer.textContent = "" //まず消す
+        memos.sort() //次にソート
+        //次に表示
+        for (let i = 0; i < memos.length; i++) {
+          const div = document.createElement("div")
+          div.textContent = memos[i]
+          memoContainer.append(div)
+        }
+      }
+    </script>
+  </body>
+</html>
