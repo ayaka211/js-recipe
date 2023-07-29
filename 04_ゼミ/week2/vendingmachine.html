@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>自販機</title>
+  </head>
+  <body>
+    <h1>自販機</h1>
+
+    <section>
+      <h3>自販機にお金を入れる</h3>
+      <button id="add-button-100">100円入れる</button>
+      <h4>↓財布↓</h4>
+
+      <div id="display-saifu">1000</div>
+      <h4>↓投入金額↓</h4>
+      <div id="display-jihanki-money">0</div>
+    </section>
+
+    <section>
+      <h3>商品を買う</h3>
+      <button id="buy-button-tea">お茶(100円)</button>
+    </section>
+    <section>
+      <h3>買った商品</h3>
+      <div id="display-items"></div>
+    </section>
+    <script>
+      // 変数を２つ作る
+      // 財布
+      let saifu = 1000
+      //投入金額
+      let jihankiMoney = 0
+
+      // 100円入れるボタンを押したときに，100円入れる処理
+      const addbutton100 = document.getElementById("add-button-100")
+      const displaySaifu = document.getElementById("display-saifu")
+      const displayJihankiMoney = document.getElementById(
+        "display-jihanki-money",
+      )
+      addbutton100.onclick = function () {
+        if (saifu < 100) return //早期リターン？
+        saifu -= 100 // 財布-100
+        jihankiMoney += 100 // 投入金額+100
+        displaySaifu.textContent = saifu // ディスプレイに表示
+        displayJihankiMoney.textContent = jihankiMoney // ディスプレイに表示
+      }
+      //うまく動かなかった
+      //displaySaifu.textContent = displaySaifu.textContent - 100
+      //displayJihankiMoney.textContent = displayJihankiMoney.textContent + 100
+
+      // HTML要素を取得する
+      const buyButtonTea = document.getElementById("buy-button-tea")
+      const displayItems = document.getElementById("display-items")
+
+      // お茶ボタンを押したときに，お茶を増やす処理
+      // お茶ボタンを押したときに，お金を投入する処理
+      buyButtonTea.onclick = function () {
+        if (jihankiMoney < 100) return
+        jihankiMoney -= 100
+        displayJihankiMoney.textContent = jihankiMoney
+        displayItems.textContent = displayItems.textContent + "🍵"
+      }
+    </script>
+  </body>
+</html>

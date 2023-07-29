@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>あやかが行った国はどこでしょう？</h1>
+    <button id="button1">韓国🇰🇷</button>
+    <button id="button2">オーストラリア🇦🇺</button>
+    <button id="button3">アメリカ🇺🇸</button>
+    <div id="feedback">正解は...？</div>
+    <script>
+      //week1ゼミ
+      //2023年7月15日20時42分
+      //ワーク「クイズアプリを作ろう」
+      //https://scrapbox.io/webex-19/ワーク「クイズアプリを作ろう」
+      //一度つくりあげたら、クイズのお題と、選択肢と解答は、ペアと相談してオリジナルなものにしてください
+      // どの要素をいじるかを決める
+      const button1 = document.getElementById("button1")
+      const button2 = document.getElementById("button2")
+      const button3 = document.getElementById("button3")
+      const feedback = document.getElementById("feedback")
+
+      //ボタンをクリック
+      //正解，不正解を表示する
+      button1.onclick = function () {
+        button2.style.backgroundColor = "white"
+        feedback.textContent = "不正解！"
+        feedback.style.color = "black"
+        feedback.style.fontSize = "24px"
+      }
+
+      button2.onclick = function () {
+        //押したら赤くする（戻らない）
+        button2.style.backgroundColor = "red"
+        feedback.textContent = "正解！"
+        //文字を赤くする（戻らない）
+        feedback.style.color = "red"
+        //サイズを大きくする（戻らない）
+        feedback.style.fontSize = "64px"
+        //feedback.style.color = "yellow"
+        //button2.style.color = "red"
+      }
+
+      button3.onclick = function () {
+        button2.style.backgroundColor = "white"
+        feedback.textContent = "不正解！"
+        feedback.style.color = "black"
+        feedback.style.fontSize = "24px"
+      }
+    </script>
+  </body>
+</html>

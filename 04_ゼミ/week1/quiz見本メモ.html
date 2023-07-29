@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>クイズ：大学はどこ？</h1>
+    <button id="wrong">東大</button>
+    <button id="correct">東工大</button>
+    <div id="feedback">正解は...？</div>
+    <script>
+      // どの要素をいじるかを決める
+      const wrongButton = document.getElementById("wrong")
+      const correctButton = document.getElementById("correct")
+      const feedback = document.getElementById("feedback")
+
+      //どういじるかを決める
+      //不正解をクリックしたら
+      wrongButton.onclick = function () {
+        //表示する
+        feedback.textContent = "不正解！"
+      }
+
+      //正解をクリックしたら
+      correctButton.onclick = function () {
+        //表示する
+        feedback.textContent = "正解！"
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>僕の趣味は何でしょう？</h1>
+    <button id="button1">スノーボード🏂</button>
+    <button id="button2">カラオケ🎤</button>
+    <button id="button3">勉強📚</button>
+    <div id="feedback">正解は...？</div>
+    <script>
+      //week1ゼミ
+      //2023年7月15日20時1分
+      //ワーク「クイズアプリを作ろう」
+      //https://scrapbox.io/webex-19/ワーク「クイズアプリを作ろう」
+      // どの要素をいじるかを決める
+      const button1 = document.getElementById("button1")
+      const button2 = document.getElementById("button2")
+      const button3 = document.getElementById("button3")
+      const feedback = document.getElementById("feedback")
+
+      //ボタンをクリック
+      //正解，不正解を表示する
+      button1.onclick = function () {
+        feedback.textContent = "不正解！"
+      }
+
+      button2.onclick = function () {
+        feedback.textContent = "正解！"
+      }
+
+      button3.onclick = function () {
+        feedback.textContent = "不正解！"
+      }
+    </script>
+  </body>
+</html>

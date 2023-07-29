@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>メモアプリ（配列）</title>
+  </head>
+  <body>
+    <h2>メモアプリ（配列）</h2>
+    <input type="text" id="memo-input" />
+    <button id="add-button">追加</button>
+    <div id="memo-container"></div>
+    <script>
+      const memoInput = document.getElementById("memo-input")
+      const addButton = document.getElementById("add-button")
+      const memoContainer = document.getElementById("memo-container")
+
+      //配列を宣言する
+      let memos = []
+
+      addButton.onclick = function () {
+        //配列の値を<div id="memo-container"></div>に追加するまえに、<div id="memo-container"></div>の持つタグを消して、memosの値と表示を一致させてください。
+        memoContainer.textContent = "" //入れ替えている，前のを消して，今のを表示させる
+
+        memos.push(memoInput.value)
+        console.log(memos)
+
+        // 追加ボタンを押したら、変更されたmemosの値をブラウザに表示されている<div id="memo-container"></div>に反映させてください。 ]
+        for (let i = 0; i < memos.length; i++) {
+          const div = document.createElement("div")
+          div.textContent = memos[i]
+          memoContainer.append(div)
+        }
+
+        //配列の値を<div id="memo-container"></div>に追加するまえに、<div id="memo-container"></div>の持つタグを消して、memosの値と表示を一致させてください。
+        //memoContainer.textContent = "" //ここの位置に入れると失敗する，すぐ消えちゃう
+
+        // // 取得した内容をDOMに反映する
+        // // 1. div をJavaScriptで新しく作る
+        // const div = document.createElement("div")
+        // // 2. 作成したdivのtextContentにinputに入力した内容を入れる
+        // div.textContent = memoInput.value
+        // // 3. 作成したdivを<div id="memo-container"></div>の子要素に追加する
+        // memoContainer.append(div)
+      }
+    </script>
+  </body>
+</html>

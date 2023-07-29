@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 繰り返し表示する際、数字が3の倍数だったら"Fizz" 。5の倍数だったら"Buzz"。15の倍数だったら"FizzBuzz" を表示するようにFizzBuzz を変えてください。]
+      //関数fizzBuzzFunctionを作成
+      const fizzbuzzFunction = function (x) {
+        //繰り返し処理for文
+        //開始，処理，最後
+        for (let i = 1; i <= x; i++) {
+          //15で割り切れる"FizzBuzz"
+          if (i % 15 === 0) {
+            console.log("FizzBuzz")
+          }
+          //3で割り切れる"Fizz"
+          else if (i % 3 === 0) {
+            console.log("Fizz")
+          }
+          //5で割り切れる"Buzz"
+          else if (i % 5 === 0) {
+            console.log("Buzz")
+          }
+          //普通の数字
+          //else{}１行の場合は入れなくてもOK
+          // else {
+          //   console.log(i)
+          // }
+          else console.log(i)
+        }
+      }
+      //100まで表示させる
+      fizzbuzzFunction(100)
+    </script>
+  </body>
+</html>
